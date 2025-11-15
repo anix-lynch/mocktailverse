@@ -2,6 +2,10 @@
 
 An end-to-end AWS-native ETL/ELT pipeline demonstrating enterprise-grade data engineering practices with serverless technologies.
 
+![Demo](demo.gif)
+
+🔗 **Live Dashboard**: [mocktailverse.streamlit.app](https://mocktailverse.streamlit.app)
+
 ## 🏗️ Architecture Overview
 
 ```
