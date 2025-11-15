@@ -233,7 +233,8 @@ def main():
     load_css()
 
     # Header
-    st.title("🍹 Mocktailverse ETL Pipeline Dashboard")
+    st.title("🍹 Mocktailverse AWS ETL Pipeline Dashboard")
+    st.caption("Real-time monitoring for AWS-native serverless ETL: S3 → Lambda → Glue → DynamoDB | Orchestrated by Airflow + dbt")
     st.markdown("---")
 
     # Sidebar
