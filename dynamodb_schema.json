@@ -1,0 +1,82 @@
+{
+  "TableName": "mocktailverse-cocktails",
+  "KeySchema": [
+    {
+      "AttributeName": "id",
+      "KeyType": "HASH"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "category",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "complexity_score",
+      "AttributeType": "N"
+    },
+    {
+      "AttributeName": "spirit_type",
+      "AttributeType": "S"
+    }
+  ],
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "category-index",
+      "KeySchema": [
+        {
+          "AttributeName": "category",
+          "KeyType": "HASH"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      },
+      "ProvisionedThroughput": {
+        "ReadCapacityUnits": 5,
+        "WriteCapacityUnits": 5
+      }
+    },
+    {
+      "IndexName": "spirit-complexity-index",
+      "KeySchema": [
+        {
+          "AttributeName": "spirit_type",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "complexity_score",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "KEYS_ONLY"
+      },
+      "ProvisionedThroughput": {
+        "ReadCapacityUnits": 5,
+        "WriteCapacityUnits": 5"
+      }
+    }
+  ],
+  "ProvisionedThroughput": {
+    "ReadCapacityUnits": 5,
+    "WriteCapacityUnits": 5
+  },
+  "StreamSpecification": {
+    "StreamEnabled": false
+  },
+  "Tags": [
+    {
+      "Key": "Project",
+      "Value": "Mocktailverse"
+    },
+    {
+      "Key": "Environment",
+      "Value": "Development"
+    }
+  ]
+}

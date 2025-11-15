@@ -1,0 +1,22 @@
+mocktailverse:
+  target: dev
+  outputs:
+    dev:
+      type: athena
+      s3_staging_dir: s3://mocktailverse-dbt-staging/dev/
+      s3_data_dir: s3://mocktailverse-dbt-data/dev/
+      s3_data_naming: schema_table_unique
+      schema: mocktailverse_dev
+      database: mocktailverse_dev
+      region_name: us-east-1
+      aws_profile_name: default
+
+    prod:
+      type: athena
+      s3_staging_dir: s3://mocktailverse-dbt-staging/prod/
+      s3_data_dir: s3://mocktailverse-dbt-data/prod/
+      s3_data_naming: schema_table_unique
+      schema: mocktailverse_prod
+      database: mocktailverse_prod
+      region_name: us-east-1
+      aws_profile_name: default
