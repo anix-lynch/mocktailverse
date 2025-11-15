@@ -275,11 +275,11 @@ def main():
 
     with col2:
         avg_complexity = df['complexity_score'].mean() if not df.empty else 0
-        st.metric("🎯 Avg Complexity", ".1f")
+        st.metric("🎯 Avg Complexity", f"{avg_complexity:.1f}")
 
     with col3:
         avg_calories = df['estimated_calories'].mean() if not df.empty else 0
-        st.metric("🔥 Avg Calories", ".0f")
+        st.metric("🔥 Avg Calories", f"{avg_calories:.0f}")
 
     with col4:
         spirit_types = df['spirit_type'].nunique() if not df.empty else 0
